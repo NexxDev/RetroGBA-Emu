@@ -1,0 +1,7 @@
+      - name: Compilar APK
+        run: |
+          PROJECT_DIR="$(dirname "$(find proyecto -name settings.gradle.kts -print -quit)")"
+          echo "Proyecto encontrado en: $PROJECT_DIR"
+          cd "$PROJECT_DIR"
+          chmod +x gradlew 2>/dev/null || true
+          gradle assembleDebug
